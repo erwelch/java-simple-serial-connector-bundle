@@ -23,6 +23,9 @@
 						<Bundle-Activator>jssc.osgi.Activator</Bundle-Activator>
 						<Embed-Dependency>asm-all;scope=runtime;inline=true,
                     	jssc;scope=runtime;inline=true</Embed-Dependency>
+                    	<Export-Package>
+                    		jssc.*
+                    	</Export-Package>
                     	<Bundle-NativeCode>
 							libs/linux/libjSSC-2.8_armhf.so; processor=arm; osname=Linux; selection-filter="(org.apache.felix.processor.feature=vfp)", 
 							libs/linux/libjSSC-2.8_armsf.so; osname=Linux; processor=arm,
