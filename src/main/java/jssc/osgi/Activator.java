@@ -12,6 +12,7 @@ public class Activator implements BundleActivator {
 	
 	public void start(BundleContext context) throws Exception {
 		String processor = context.getProperty(Constants.FRAMEWORK_PROCESSOR);
+		processor = processor.replace('-', '_');
 		System.loadLibrary("jSSC-2.8_" + processor);
 		staticCodeRemoverHook = context.registerService(WeavingHook.class.getName(), new StaticCodeBlockRemover(), null);
 		
