@@ -1,5 +1,7 @@
 package jssc.osgi;
 
+import jssc.SerialNativeInterface;
+
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
@@ -14,8 +16,10 @@ import static org.objectweb.asm.Opcodes.*;
 public class StaticCodeBlockRemover implements WeavingHook {
     
 	public void weave(WovenClass wovenClass) {
-		wovenClass.setBytes(transform(wovenClass.getBytes()));
-		
+		if(wovenClass.getClassName().equals(SerialNativeInterface.class.getName()))
+		{
+			wovenClass.setBytes(transform(wovenClass.getBytes()));
+		}
 	}
 
     public byte[] transform(byte[] origClassData) {
