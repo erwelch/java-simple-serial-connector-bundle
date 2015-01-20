@@ -21,7 +21,7 @@
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Bundle-Version>${project.version}</Bundle-Version>
 						<Bundle-Activator>jssc.osgi.Activator</Bundle-Activator>
-						<Embed-Dependency>asm-all;scope=runtime;inline=true,
+						<Embed-Dependency>asm-all;inline=true,
                     	jssc;scope=runtime;inline=true</Embed-Dependency>
                     	<Export-Package>
                     		jssc.*
@@ -40,6 +40,7 @@
 							libs/windows/jSSC-2.8_x86.dll; osname=win32; processor=x86
 						</Bundle-NativeCode>					
 					</instructions>
+					<unpackBundle>true</unpackBundle>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -55,7 +56,6 @@
 			<groupId>org.ow2.asm</groupId>
 			<artifactId>asm-all</artifactId>
 			<version>4.0</version>
-			<scope>runtime</scope>
 		</dependency>
 		
 		<dependency>
