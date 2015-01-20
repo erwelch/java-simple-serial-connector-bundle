@@ -2,7 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.scream3r</groupId>
+	<parent>
+		<groupId>com.edjusted</groupId>
+		<artifactId>edjusted-parent-pom</artifactId>
+		<version>1.0.2</version>
+	</parent>
+
 	<artifactId>jssc-bundle</artifactId>
 	<name>Java Simple Serial Connector OSGi Bundle</name>
 	<description>Java Simple Serial Connector OSGi Bundle</description>
